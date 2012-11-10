@@ -14,7 +14,6 @@ MANAGERS = ADMINS
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}  
 
 # DEVELOPMENT DATABASE DETAILS
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -25,21 +24,19 @@ DATABASES = {
 #       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-
-# PRODUCTION DATABASE DETAILS
 '''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'dbsrilgke0kmge',                      # Or path to database file if using sqlite3.
-        'USER': 'qhwgvgcliptwoc',                      # Not used with sqlite3.
-        'PASSWORD': '3IsMQVAs9DbLschsN9cZyqBL_d',                  # Not used with sqlite3.
-        'HOST': 'ec2-23-21-169-239.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+  # PRODUCTION DATABASE DETAILS
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+          'NAME': 'dbsrilgke0kmge',                      # Or path to database file if using sqlite3.
+          'USER': 'qhwgvgcliptwoc',                      # Not used with sqlite3.
+          'PASSWORD': '3IsMQVAs9DbLschsN9cZyqBL_d',                  # Not used with sqlite3.
+          'HOST': 'ec2-23-21-169-239.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+          'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+      }
+  }
 '''
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -142,7 +139,8 @@ INSTALLED_APPS = (
     'userena', 
     'guardian', 
     'easy_thumbnails',
-    'accounts'
+    'accounts',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging
