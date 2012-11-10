@@ -20,9 +20,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '/Users/fadhil/Documents/magic/django/booklat/sqlite3.db',                      # Or path to database file if using sqlite3.
         #'USER': 'postgres',                      # Not used with sqlite3.
-#g       'PASSWORD': 'postgres',                  # Not used with sqlite3.
-#g       'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-#g       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#       'PASSWORD': 'postgres',                  # Not used with sqlite3.
+#       'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+#       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -139,6 +139,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'userena', 
+    'guardian', 
+    'easy_thumbnails',
+    'accounts'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -169,3 +173,23 @@ LOGGING = {
         },
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+        'userena.backends.UserenaAuthenticationBackend',
+        'guardian.backends.ObjectPermissionBackend',
+        'django.contrib.auth.backends.ModelBackend',
+    )
+
+ANONYMOUS_USER_ID = -1
+
+AUTH_PROFILE_MODULE = 'accounts.MyProfile'
+
+LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/sigout/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'booklatemail@gmail.com'
+EMAIL_HOST_PASSWORD = 'hentamsajaLah'
