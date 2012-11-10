@@ -1,6 +1,5 @@
 # Django settings for booklat project.
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -10,6 +9,26 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}  
+
+"""
+# DEVELOPMENT DATABASE DETAILS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'booklat',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': 'postgres',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+"""
+
+# PRODUCTION DATABASE DETAILS
 
 DATABASES = {
     'default': {
@@ -21,6 +40,7 @@ DATABASES = {
         'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -80,7 +100,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'uno9_@ix9mj8q2_ggt*k6b49d4skgq-beoq$0x#05a6k7rzpi)'
+SECRET_KEY = '&amp;r_%vka%_eyy8r1%=_ya+=ygl2&amp;c$d5$m3poky97xk$z)u^kb4'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
